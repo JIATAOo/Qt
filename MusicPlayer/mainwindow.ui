@@ -1,0 +1,1500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1029</width>
+    <height>898</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Link">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Link">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>236</red>
+        <green>236</green>
+        <blue>236</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Link">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background-color:#ececec;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="addFileButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>310</y>
+      <width>81</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 0px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>650</y>
+      <width>691</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="lastButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>90</y>
+       <width>97</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 75px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="playButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>90</y>
+       <width>97</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 75px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="nextButton">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>90</y>
+       <width>97</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 75px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="playModeComboBox">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>111</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px;
+    color: #2f4f4f; /* DarkSlateGray */
+    min-width: 75px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 1px solid #dcdcdc; /* Gainsboro */
+}
+
+QComboBox::down-arrow {
+    image: url(:/images/down_arrow.png); /* Replace with your own arrow image */
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox::item {
+    background-color: #ffffff; /* White */
+    color: #2f4f4f; /* DarkSlateGray */
+}
+
+QComboBox::item:selected {
+    background-color: #add8e6; /* LightBlue */
+    color: #ffffff; /* White */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #ffffff; /* White */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    selection-background-color: #add8e6; /* LightBlue */
+    selection-color: #ffffff; /* White */
+}</string>
+     </property>
+    </widget>
+    <widget class="QSlider" name="songProgress">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>551</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider {
+    background-color: transparent;
+    height: 20px; /* Adjust height for vertical slider */
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    height: 6px;
+    background: #f0f8ff; /* AliceBlue */
+    margin: 2px 0;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 14px;
+    height: 14px;
+    margin: -5px 0; /* Center the handle vertically */
+    border-radius: 7px; /* Make the handle round */
+}
+
+QSlider::groove:vertical {
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 6px;
+    background: #f0f8ff; /* AliceBlue */
+    margin: 0 2px;
+    border-radius: 3px;
+}
+
+QSlider::handle:vertical {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 14px;
+    height: 14px;
+    margin: 0 -5px; /* Center the handle horizontally */
+    border-radius: 7px; /* Make the handle round */
+}
+
+QSlider::sub-page:horizontal {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    height: 6px;
+    border-radius: 3px;
+}
+
+QSlider::add-page:horizontal {
+    background: #ffffff; /* White */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    height: 6px;
+    border-radius: 3px;
+}
+
+QSlider::sub-page:vertical {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 6px;
+    border-radius: 3px;
+}
+
+QSlider::add-page:vertical {
+    background: #ffffff; /* White */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 6px;
+    border-radius: 3px;
+}
+</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="volume">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>120</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 0px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QSlider" name="volumeLevel">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>130</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider {
+    background-color: transparent;
+    height: 20px; /* Adjust height for vertical slider */
+}
+
+QSlider::groove:horizontal {
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    height: 6px;
+    background: #f0f8ff; /* AliceBlue */
+    margin: 2px 0;
+    border-radius: 3px;
+}
+
+QSlider::handle:horizontal {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 14px;
+    height: 14px;
+    margin: -5px 0; /* Center the handle vertically */
+    border-radius: 7px; /* Make the handle round */
+}
+
+QSlider::groove:vertical {
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 6px;
+    background: #f0f8ff; /* AliceBlue */
+    margin: 0 2px;
+    border-radius: 3px;
+}
+
+QSlider::handle:vertical {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 14px;
+    height: 14px;
+    margin: 0 -5px; /* Center the handle horizontally */
+    border-radius: 7px; /* Make the handle round */
+}
+
+QSlider::sub-page:horizontal {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    height: 6px;
+    border-radius: 3px;
+}
+
+QSlider::add-page:horizontal {
+    background: #ffffff; /* White */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    height: 6px;
+    border-radius: 3px;
+}
+
+QSlider::sub-page:vertical {
+    background: #add8e6; /* LightBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 6px;
+    border-radius: 3px;
+}
+
+QSlider::add-page:vertical {
+    background: #ffffff; /* White */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    width: 6px;
+    border-radius: 3px;
+}
+</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="positionLabel">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>40</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:rgb(0,0,0);</string>
+     </property>
+     <property name="text">
+      <string>00:00/00:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="MusicListWidget" name="musicListWidget">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>310</y>
+      <width>221</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QListWidget {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px;
+    color: #2f4f4f; /* DarkSlateGray */
+}
+
+QListWidget::item {
+    background-color: #ffffff; /* White */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 3px;
+    margin: 3px;
+    padding: 5px;
+    color: #2f4f4f; /* DarkSlateGray */
+}
+
+QListWidget::item:selected {
+    background-color: #add8e6; /* LightBlue */
+    color: #ffffff; /* White */
+}
+
+QListWidget::item:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+}</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditLink">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>80</y>
+      <width>221</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #add8e6; /* LightBlue */
+    background-color: #ffffff; /* White */
+}
+
+QLineEdit::disabled {
+    background-color: #e6e6e6; /* LightGray */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>输入歌曲名称</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="downloadFileButton">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>80</y>
+      <width>81</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 0px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="MusicListWidget" name="downloadListWidget">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>150</y>
+      <width>221</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QListWidget {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px;
+    color: #2f4f4f; /* DarkSlateGray */
+}
+
+QListWidget::item {
+    background-color: #ffffff; /* White */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 3px;
+    margin: 3px;
+    padding: 5px;
+    color: #2f4f4f; /* DarkSlateGray */
+}
+
+QListWidget::item:selected {
+    background-color: #add8e6; /* LightBlue */
+    color: #ffffff; /* White */
+}
+
+QListWidget::item:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+}</string>
+    </property>
+   </widget>
+   <widget class="LyricWidget" name="lyricWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>661</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>651</width>
+       <height>571</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="infoLabel">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 20px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="TitleLabel">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 20px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>曲名:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="AlbumLabel">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 20px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>专辑:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="AuthorLabel">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 20px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>歌手:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 12px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 16px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 20px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="WindowText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Text">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="ButtonText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Base">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="Window">
+            <brush brushstyle="SolidPattern">
+             <color alpha="0">
+              <red>0</red>
+              <green>0</green>
+              <blue>0</blue>
+             </color>
+            </brush>
+           </colorrole>
+           <colorrole role="PlaceholderText">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>240</red>
+              <green>230</green>
+              <blue>140</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::TabFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #F0E68C; /* DarkSlateGray text color */
+    font-size: 24px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>尚未播放歌曲</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 20px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 16px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>-1</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: transparent; /* Transparent background */
+    color: #2f4f4f; /* DarkSlateGray text color */
+    font-size: 12px; /* Adjust the font size for readability */
+    font-family: &quot;Arial&quot;, sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    border: none; /* Remove the border */
+}
+
+QLabel:focus {
+    outline: none; /* Remove focus outline */
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="coverLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>640</y>
+      <width>231</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exitButton">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>20</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 0px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="minButton">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>20</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #2f4f4f; /* DarkSlateGray */
+    font-size: 14px;
+    min-width: 0px;
+}
+
+QPushButton:hover {
+    background-color: #e6e6fa; /* Lavender */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+QPushButton:pressed {
+    background-color: #add8e6; /* LightBlue */
+    border: 1px solid #a9a9a9; /* DarkGray */
+    color: #ffffff; /* White */
+}
+
+QPushButton:disabled {
+    background-color: #f0f8ff; /* AliceBlue */
+    border: 1px solid #dcdcdc; /* Gainsboro */
+    color: #a9a9a9; /* DarkGray */
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1029</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LyricWidget</class>
+   <extends>QWidget</extends>
+   <header>LyricWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MusicListWidget</class>
+   <extends>QListWidget</extends>
+   <header>MusicListWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
