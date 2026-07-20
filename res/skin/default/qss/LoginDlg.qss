@@ -1,0 +1,323 @@
+LoginDlg QLabel#lab_icon {
+    border-image: url(:/image/LoginDlg/res/skin/default/pic/login/vcc_icon.png);
+    border: none;
+}
+
+LoginDlg QLabel#lab_error_info
+{
+    background-color: transparent;
+    color: #ff0000;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    border: none;
+}
+
+
+LoginDlg QLabel#lab_user_name,
+LoginDlg QLabel#lab_password
+{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    border: none;
+}
+
+LoginDlg QLineEdit#ledt_user_name,
+LoginDlg QLineEdit#ledt_user_password
+{
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 0 5px;
+    height: 24px;
+}
+
+LoginDlg QLineEdit#ledt_user_name:hover,
+LoginDlg QLineEdit#ledt_user_password:hover
+{
+    background-color: #1ba1e2;
+    border: #0099ff 3px solid;
+}
+
+LoginDlg QPushButton#pbtn_login,
+LoginDlg QPushButton#pbtn_register,
+LoginDlg QPushButton#pbtn_cancel
+{
+    background-color: #BBC8E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 0 5px;
+    height: 40px;
+}
+
+LoginDlg QPushButton#pbtn_login:hover,
+LoginDlg QPushButton#pbtn_register:hover,
+LoginDlg QPushButton#pbtn_cancel:hover
+{
+    background-color: #1ba1e2;
+    border: #0099ff 3px solid;
+    color: #ffffff;
+}
+
+LoginDlg QCheckBox#ccbox_rember_password
+{
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 0 5px;
+    height: 30px;
+}
+
+LoginDlg QCheckBox#ccbox_rember_password:hover
+{
+    background-color: #1ba1e2;
+}
+
+LoginDlg QToolButton#tbtn_new_register
+{
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 0 5px;
+    height: 30px;
+}
+
+LoginDlg QToolButton#tbtn_new_register:hover
+{
+    background-color: #1ba1e2;
+}
+
+/* ==================== MainWindow ==================== */
+
+MainWindow #centralWidget
+{
+    background-color: #181A1F;
+}
+
+MainWindow QLabel#welcomeLabel
+{
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+MainWindow QPushButton#joinBtn,
+MainWindow QPushButton#createBtn
+{
+    background-color: #BBC8E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+MainWindow QPushButton#joinBtn:hover,
+MainWindow QPushButton#createBtn:hover
+{
+    background-color: #1ba1e2;
+}
+
+/* ==================== CreateMeetingDialog ==================== */
+
+CreateMeetingDialog
+{
+    background-color: #181A1F;
+}
+
+CreateMeetingDialog QLabel#titleLabel
+{
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+CreateMeetingDialog QLabel#idLabel
+{
+    color: #1ba1e2;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+CreateMeetingDialog QPushButton#copyBtn,
+CreateMeetingDialog QPushButton#closeBtn
+{
+    background-color: #BBC8E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 0 5px;
+    height: 40px;
+}
+
+CreateMeetingDialog QPushButton#copyBtn:hover,
+CreateMeetingDialog QPushButton#closeBtn:hover
+{
+    background-color: #1ba1e2;
+}
+
+/* ==================== JoinMeetingDialog ==================== */
+
+JoinMeetingDialog
+{
+    background-color: #181A1F;
+}
+
+JoinMeetingDialog QLabel#titleLabel
+{
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+JoinMeetingDialog QLineEdit#idEdit
+{
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 3px;
+    font-size: 18px;
+    font-family: "Microsoft YaHei";
+    padding: 0 10px;
+    height: 40px;
+}
+
+JoinMeetingDialog QLineEdit#idEdit:focus
+{
+    border: 1px solid #1ba1e2;
+}
+
+JoinMeetingDialog QLabel#errorLabel
+{
+    color: #ff0000;
+    font-size: 13px;
+    font-family: "Microsoft YaHei";
+}
+
+JoinMeetingDialog QPushButton#joinBtn,
+JoinMeetingDialog QPushButton#cancelBtn
+{
+    background-color: #BBC8E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 0 5px;
+    height: 40px;
+}
+
+JoinMeetingDialog QPushButton#joinBtn:hover,
+JoinMeetingDialog QPushButton#cancelBtn:hover
+{
+    background-color: #1ba1e2;
+}
+
+/* ==================== MeetingRoom ==================== */
+
+MeetingRoom #centralWidget
+{
+    background-color: #0a0a0a;
+}
+
+MeetingRoom #topBar
+{
+    background-color: #181A1F;
+    border-bottom: 1px solid #333;
+}
+
+MeetingRoom QLabel#meetingIdLabel,
+MeetingRoom QLabel#timerLabel,
+MeetingRoom QLabel#participantsLabel
+{
+    color: #ffffff;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+}
+
+MeetingRoom #videoFrame
+{
+    background-color: #000000;
+    border: none;
+}
+
+MeetingRoom QLabel#videoPlaceholder
+{
+    color: #666666;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+
+MeetingRoom #bottomBar
+{
+    background-color: #181A1F;
+    border-top: 1px solid #333;
+}
+
+MeetingRoom QPushButton#muteBtn,
+MeetingRoom QPushButton#cameraBtn,
+MeetingRoom QPushButton#shareBtn,
+MeetingRoom QPushButton#chatBtn
+{
+    background-color: #BBC8E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+}
+
+MeetingRoom QPushButton#muteBtn:hover,
+MeetingRoom QPushButton#cameraBtn:hover,
+MeetingRoom QPushButton#shareBtn:hover,
+MeetingRoom QPushButton#chatBtn:hover
+{
+    background-color: #1ba1e2;
+}
+
+MeetingRoom QPushButton#muteBtn[muted="true"]
+{
+    background-color: #ff4757;
+}
+
+MeetingRoom QPushButton#cameraBtn[cameraOn="false"]
+{
+    background-color: #ff4757;
+}
+
+MeetingRoom QPushButton#shareBtn[sharing="true"]
+{
+    background-color: #1ba1e2;
+}
+
+MeetingRoom QPushButton#leaveBtn
+{
+    background-color: #ff4757;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+}
+
+MeetingRoom QPushButton#leaveBtn:hover
+{
+    background-color: #ff6b7a;
+}

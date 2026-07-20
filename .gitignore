@@ -1,0 +1,21 @@
+# Build directories
+build/
+build-*/
+
+# IDE files
+.vs/
+*.user
+*.suo
+
+# Qt generated files
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# Compiled output
+*.exe
+*.dll
+*.lib
+*.pdb
+*.obj
+*.o
