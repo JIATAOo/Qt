@@ -78,3 +78,10 @@ private:
 #define LOG_INFO_S   Logger::LogStreamHelper(Logger::Level::Info,  __FILE__, __LINE__)
 #define LOG_WARN_S   Logger::LogStreamHelper(Logger::Level::Warn,  __FILE__, __LINE__)
 #define LOG_ERROR_S  Logger::LogStreamHelper(Logger::Level::Error, __FILE__, __LINE__)
+
+// ──── 参考项目兼容别名 ────
+
+#define LOG_DEBUG_STREAM  Logger::LogStreamHelper(Logger::Level::Debug, __FILE__, __LINE__)
+#define LOG_INFO_STREAM   Logger::LogStreamHelper(Logger::Level::Info,  __FILE__, __LINE__)
+#define LOG_WARN_STREAM   Logger::LogStreamHelper(Logger::Level::Warn,  __FILE__, __LINE__)
+#define LOG_ERROR_STREAM  Logger::LogStreamHelper(Logger::Level::Error, __FILE__, __LINE__)

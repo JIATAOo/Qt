@@ -34,14 +34,28 @@ add_executable(${PROJECT_NAME}
     src/widgets/JoinMeetingDialog.h
     src/widgets/MeetingRoom.cpp
     src/widgets/MeetingRoom.h
-    src/codec/VideoEncoder.cpp
-    src/codec/VideoEncoder.h
-    src/codec/AudioEncoder.cpp
-    src/codec/AudioEncoder.h
-    src/transport/UdpTransport.cpp
-    src/transport/UdpTransport.h
-    src/network/NetworkEngine.cpp
-    src/network/NetworkEngine.h
+    src/transport/TransportDefine.h
+    src/transport/ITransportEngine.h
+    src/transport/RtcTransportBase.cpp
+    src/transport/RtcTransportBase.h
+    src/transport/RtcPushTransport.cpp
+    src/transport/RtcPushTransport.h
+    src/transport/RtcPullTransport.cpp
+    src/transport/RtcPullTransport.h
+    src/transport/WHIPWHEPClient.cpp
+    src/transport/WHIPWHEPClient.h
+    src/transport/TransportEngine.cpp
+    src/transport/TransportEngine.h
+    src/transport/codec/video_codec/VideoCodecInterface.h
+    src/transport/codec/video_codec/VideoCodecFactory.cpp
+    src/transport/codec/video_codec/VideoCodecFactory.h
+    src/transport/codec/video_codec/H264Codec.cpp
+    src/transport/codec/video_codec/H264Codec.h
+    src/transport/codec/audio_codec/AudioCodecInterface.h
+    src/transport/codec/audio_codec/AudioCodecFactory.cpp
+    src/transport/codec/audio_codec/AudioCodecFactory.h
+    src/transport/codec/audio_codec/OpusCodec.cpp
+    src/transport/codec/audio_codec/OpusCodec.h
     ui/LoginDlg.ui
     ui/MainWindow.ui
     ui/CreateMeetingDialog.ui
@@ -65,9 +79,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/capture
     ${CMAKE_CURRENT_SOURCE_DIR}/src/logger
     ${CMAKE_CURRENT_SOURCE_DIR}/src/widgets
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/codec
     ${CMAKE_CURRENT_SOURCE_DIR}/src/transport
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/network
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/transport/codec/video_codec
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/transport/codec/audio_codec
 )
 
 # OBS Studio SDK
@@ -81,6 +95,12 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/find_openh264.cmake)
 
 # Opus (audio codec)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/find_opus.cmake)
+
+# libsamplerate (audio resampling)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/find_libsamplerate.cmake)
+
+# libdatachannel (WebRTC)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/find_libdatachannel.cmake)
 
 # Post-build: copy Qt DLLs from vcpkg
 if(WIN32 AND MSVC)
