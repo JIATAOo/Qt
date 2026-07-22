@@ -93,7 +93,7 @@ void Engine::LeaveMeeting()
 
 QString Engine::GetCurrentUsername() const
 {
-    return m_current_meetingId;
+    return m_current_username;
 }
 
 QString Engine::GetCurrentMeetingId() const

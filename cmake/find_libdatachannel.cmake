@@ -17,7 +17,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${LIBDATACHANNEL_LIBRARIES})
 
 if(WIN32)
     # Copy all required DLLs
-    foreach(DLL_NAME datachannel juice srtp2 usrsctp libssl-3-x64 libcrypto-3-x64 legacy)
+    foreach(DLL_NAME datachannel juice srtp2 libssl-3-x64 libcrypto-3-x64 legacy)
         add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
                 "${LIBDATACHANNEL_DIRECTORY}/${DLL_NAME}.dll"

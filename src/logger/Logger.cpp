@@ -21,7 +21,9 @@ Logger &Logger::instance()
 
 Logger::~Logger()
 {
-    shutdown();
+    // 不在此处调用 shutdown()：程序退出时静态析构顺序不确定，
+    // spdlog 内部 registry 可能已先被销毁，访问会导致崩溃。
+    // 进程退出时 OS 会回收所有资源，无需手动清理。
 }
 
 void Logger::initialize(Output output, Level level, const std::string &fileDir)

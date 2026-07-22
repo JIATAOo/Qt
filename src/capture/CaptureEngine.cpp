@@ -3,6 +3,11 @@
 #include <obs-properties.h>
 #include <obs-source.h>
 #include <cstring>
+#include <thread>
+
+// 必须在跨线程 queued 连接前注册元类型
+static const int kVideoFrameMetaTypeId = qRegisterMetaType<Capture::VideoFrame>("Capture::VideoFrame");
+static const int kAudioFrameMetaTypeId = qRegisterMetaType<Capture::AudioFrame>("Capture::AudioFrame");
 
 namespace Capture {
 
@@ -97,7 +102,13 @@ void CaptureEngine::shutdown()
 {
     if (!initialized_) return;
 
+    // 先标记关机，阻止后续回调 emit 信号
+    shuttingDown_.store(true, std::memory_order_release);
+
     stopAll();
+
+    // 短暂等待，让正在执行的 OBS 回调完成
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
 
     scene_ = nullptr;
     obs_shutdown();
@@ -184,6 +195,7 @@ void CaptureEngine::stopAll()
 {
     stopVideo();
     stopAudio();
+    stopScreenShare();
 }
 
 // ──────────────────── 设备枚举 ────────────────────
@@ -226,17 +238,25 @@ void CaptureEngine::enumMics(DeviceCb cb)
 
 void CaptureEngine::createCameraSource()
 {
-    // 枚举摄像头，选第一个
     const char *deviceId = nullptr;
-    enumCameras([&](const char *id, const char * /*name*/) {
-        deviceId = id;
-        return false;  // 只要第一个
-    });
+
+    if (!camDeviceId_.empty()) {
+        deviceId = camDeviceId_.c_str();
+    } else {
+        // 未指定设备时选第一个
+        enumCameras([&](const char *id, const char * /*name*/) {
+            deviceId = id;
+            return false;
+        });
+    }
 
     if (!deviceId) {
         emit errorOccurred(tr("No camera found"));
         return;
     }
+
+    // 记住当前设备
+    camDeviceId_ = deviceId;
 
     obs_data_t *settings = obs_data_create();
     obs_data_set_string(settings, "video_device_id", deviceId);
@@ -251,7 +271,6 @@ void CaptureEngine::createCameraSource()
 
     obs_sceneitem_t *item = obs_scene_add(scene_, camSource_);
 
-    // 设置缩放边界（保持宽高比）
     obs_video_info vi;
     if (item && obs_get_video_info(&vi)) {
         vec2 bounds;
@@ -268,15 +287,22 @@ void CaptureEngine::createCameraSource()
 void CaptureEngine::createMicSource()
 {
     const char *deviceId = nullptr;
-    enumMics([&](const char *id, const char * /*name*/) {
-        deviceId = id;
-        return false;
-    });
+
+    if (!micDeviceId_.empty()) {
+        deviceId = micDeviceId_.c_str();
+    } else {
+        enumMics([&](const char *id, const char * /*name*/) {
+            deviceId = id;
+            return false;
+        });
+    }
 
     if (!deviceId) {
         emit errorOccurred(tr("No microphone found"));
         return;
     }
+
+    micDeviceId_ = deviceId;
 
     obs_data_t *settings = obs_data_create();
     obs_data_set_string(settings, "device_id", deviceId);
@@ -289,11 +315,52 @@ void CaptureEngine::createMicSource()
         return;
     }
 
-    // 关闭本地监听（避免回声）
     obs_source_set_monitoring_type(micSource_, OBS_MONITORING_TYPE_NONE);
     obs_scene_add(scene_, micSource_);
 
     blog(LOG_INFO, "Mic source created: %s", deviceId);
+}
+
+void CaptureEngine::switchCamera(const char *deviceId)
+{
+    if (!deviceId || camDeviceId_ == deviceId) return;
+
+    bool wasRunning = videoRunning();
+    if (wasRunning)
+        stopVideo();
+
+    camDeviceId_ = deviceId;
+
+    if (wasRunning)
+        startVideo();
+
+    blog(LOG_INFO, "Camera switched to: %s", deviceId);
+}
+
+void CaptureEngine::switchMic(const char *deviceId)
+{
+    if (!deviceId || micDeviceId_ == deviceId) return;
+
+    bool wasRunning = audioRunning();
+    if (wasRunning)
+        stopAudio();
+
+    micDeviceId_ = deviceId;
+
+    if (wasRunning)
+        startAudio();
+
+    blog(LOG_INFO, "Mic switched to: %s", deviceId);
+}
+
+std::string CaptureEngine::currentCameraId() const
+{
+    return camDeviceId_;
+}
+
+std::string CaptureEngine::currentMicId() const
+{
+    return micDeviceId_;
 }
 
 void CaptureEngine::destroySource(const char *name)
@@ -302,12 +369,119 @@ void CaptureEngine::destroySource(const char *name)
     if (item) obs_sceneitem_remove(item);
 }
 
+// ──────────────────── 屏幕共享 ────────────────────
+
+bool CaptureEngine::startScreenShare()
+{
+    if (!initialized_) return false;
+    if (isScreenSharing()) return true;
+
+    createScreenSource();
+    if (!screenSource_) {
+        emit errorOccurred(tr("Failed to create screen capture source"));
+        return false;
+    }
+
+    obs_sceneitem_t *item = obs_scene_add(scene_, screenSource_);
+
+    // 充满整个画布
+    if (item) {
+        obs_video_info vi;
+        if (obs_get_video_info(&vi)) {
+            vec2 bounds;
+            bounds.x = (float)vi.base_width;
+            bounds.y = (float)vi.base_height;
+            obs_sceneitem_set_bounds(item, &bounds);
+            obs_sceneitem_set_bounds_type(item, OBS_BOUNDS_SCALE_INNER);
+            obs_sceneitem_set_bounds_alignment(item, OBS_ALIGN_CENTER);
+        }
+    }
+
+    blog(LOG_INFO, "Screen share started");
+    return true;
+}
+
+void CaptureEngine::stopScreenShare()
+{
+    if (!screenSource_) return;
+
+    // 从场景中移除
+    obs_sceneitem_t *item = obs_scene_find_source(scene_, kScreenSourceName);
+    if (item) obs_sceneitem_remove(item);
+
+    screenSource_ = nullptr;
+    blog(LOG_INFO, "Screen share stopped");
+}
+
+bool CaptureEngine::isScreenSharing() const
+{
+    return screenSource_ != nullptr;
+}
+
+void CaptureEngine::createScreenSource()
+{
+    // 枚举显示器列表，选第一个
+    obs_properties_t *props = obs_get_source_properties("monitor_capture");
+    if (!props) {
+        // 尝试 display_capture (不同 OBS 版本可能不同)
+        props = obs_get_source_properties("display_capture");
+    }
+    if (!props) {
+        emit errorOccurred(tr("Screen capture not supported"));
+        return;
+    }
+
+    obs_property_t *prop = obs_properties_get(props, "monitor");
+    if (!prop) prop = obs_properties_get(props, "monitor_id");
+    if (!prop) {
+        obs_properties_destroy(props);
+        emit errorOccurred(tr("No monitor property found"));
+        return;
+    }
+
+    size_t count = obs_property_list_item_count(prop);
+    if (count == 0) {
+        obs_properties_destroy(props);
+        emit errorOccurred(tr("No monitors found"));
+        return;
+    }
+
+    // 选第一个显示器
+    const char *monitorId = obs_property_list_item_string(prop, 0);
+    const char *monitorName = obs_property_list_item_name(prop, 0);
+
+    obs_data_t *settings = obs_data_create();
+    if (monitorId && monitorId[0]) {
+        const char *key = obs_property_name(prop);
+        obs_data_set_string(settings, key, monitorId);
+    }
+
+    // 先尝试 monitor_capture，回退 display_capture
+    const char *sourceType = "monitor_capture";
+    screenSource_ = obs_source_create(sourceType, kScreenSourceName, settings, nullptr);
+    if (!screenSource_) {
+        sourceType = "display_capture";
+        screenSource_ = obs_source_create(sourceType, kScreenSourceName, settings, nullptr);
+    }
+
+    obs_data_release(settings);
+    obs_properties_destroy(props);
+
+    if (!screenSource_) {
+        emit errorOccurred(tr("Failed to create screen source"));
+        return;
+    }
+
+    blog(LOG_INFO, "Screen capture source created: %s", monitorName ? monitorName : "Monitor");
+}
+
 // ──────────────────── OBS 原始回调 ────────────────────
 
 void CaptureEngine::onRawVideo(void *param, video_data *frame)
 {
     auto *self = static_cast<CaptureEngine *>(param);
     if (!self || !frame) return;
+    if (self->shuttingDown_.load(std::memory_order_acquire)) return;
 
     std::lock_guard<std::mutex> lock(self->callbackMutex_);
     VideoFrame vf = self->convertVideo(frame);
@@ -320,6 +494,7 @@ void CaptureEngine::onRawAudio(void *param, size_t /*mixIdx*/, audio_data *data)
 {
     auto *self = static_cast<CaptureEngine *>(param);
     if (!self || !data) return;
+    if (self->shuttingDown_.load(std::memory_order_acquire)) return;
 
     std::lock_guard<std::mutex> lock(self->callbackMutex_);
     AudioFrame af = self->convertAudio(data);

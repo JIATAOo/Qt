@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <cstdint>
+#include <QMetaType>
 
 namespace Capture {
 
@@ -39,5 +40,8 @@ struct AudioFrame {
 };
 
 } // namespace Capture
+
+Q_DECLARE_METATYPE(Capture::VideoFrame)
+Q_DECLARE_METATYPE(Capture::AudioFrame)
 
 #endif // __CAPTURE_TYPES_H__

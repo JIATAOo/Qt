@@ -1,8 +1,4 @@
 {
   "name": "my-video-conference",
-  "version": "0.1.0",
-  "dependencies": [
-    "qtbase",
-    "qtmultimedia"
-  ]
+  "version": "0.1.0"
 }

@@ -21,6 +21,8 @@ add_executable(${PROJECT_NAME}
     src/capture/CaptureTypes.h
     src/capture/CaptureEngine.cpp
     src/capture/CaptureEngine.h
+    src/capture/AudioPlayer.cpp
+    src/capture/AudioPlayer.h
     src/logger/LogLevel.h
     src/logger/Logger.h
     src/logger/Logger.cpp
@@ -34,6 +36,10 @@ add_executable(${PROJECT_NAME}
     src/widgets/JoinMeetingDialog.h
     src/widgets/MeetingRoom.cpp
     src/widgets/MeetingRoom.h
+    src/widgets/ChatPanel.cpp
+    src/widgets/ChatPanel.h
+    src/widgets/ParticipantsPanel.cpp
+    src/widgets/ParticipantsPanel.h
     src/transport/TransportDefine.h
     src/transport/ITransportEngine.h
     src/transport/RtcTransportBase.cpp
@@ -54,6 +60,7 @@ add_executable(${PROJECT_NAME}
     src/transport/codec/audio_codec/AudioCodecInterface.h
     src/transport/codec/audio_codec/AudioCodecFactory.cpp
     src/transport/codec/audio_codec/AudioCodecFactory.h
+    src/transport/codec/audio_codec/OpusCodec.cpp
     src/transport/codec/audio_codec/OpusCodec.cpp
     src/transport/codec/audio_codec/OpusCodec.h
     ui/LoginDlg.ui
@@ -102,29 +109,27 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/find_libsamplerate.cmake)
 # libdatachannel (WebRTC)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/find_libdatachannel.cmake)
 
-# Post-build: copy Qt DLLs from vcpkg
+# Post-build: copy Qt DLLs and platform plugin from local Qt installation
 if(WIN32 AND MSVC)
-    if(DEFINED VCPKG_INSTALLED_DIR)
-        set(_VCPKG_BIN "${VCPKG_INSTALLED_DIR}/bin")
-        set(_VCPKG_DBG "${VCPKG_INSTALLED_DIR}/debug/bin")
-    else()
-        set(_VCPKG_BIN "$ENV{VCPKG_ROOT}/installed/x64-windows/bin")
-        set(_VCPKG_DBG "$ENV{VCPKG_ROOT}/installed/x64-windows/debug/bin")
-    endif()
+    set(QT_BIN_DIR "G:/Qt/6.8.3/msvc2022_64/bin")
+    set(QT_PLUGIN_DIR "G:/Qt/6.8.3/msvc2022_64/plugins")
 
     add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "$<IF:$<CONFIG:Debug>,${_VCPKG_DBG},${_VCPKG_BIN}>/Qt6Cored$<$<NOT:$<CONFIG:Debug>>.dll"
+            "${QT_BIN_DIR}/Qt6Cored.dll"
             "$<TARGET_FILE_DIR:${PROJECT_NAME}>/"
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "$<IF:$<CONFIG:Debug>,${_VCPKG_DBG},${_VCPKG_BIN}>/Qt6Widgetsd$<$<NOT:$<CONFIG:Debug>>.dll"
+            "${QT_BIN_DIR}/Qt6Widgetsd.dll"
             "$<TARGET_FILE_DIR:${PROJECT_NAME}>/"
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "$<IF:$<CONFIG:Debug>,${_VCPKG_DBG},${_VCPKG_BIN}>/Qt6Multimediad$<$<NOT:$<CONFIG:Debug>>.dll"
+            "${QT_BIN_DIR}/Qt6Multimediad.dll"
             "$<TARGET_FILE_DIR:${PROJECT_NAME}>/"
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
-            "$<IF:$<CONFIG:Debug>,${_VCPKG_DBG},${_VCPKG_BIN}>/Qt6Networkd$<$<NOT:$<CONFIG:Debug>>.dll"
+            "${QT_BIN_DIR}/Qt6Networkd.dll"
             "$<TARGET_FILE_DIR:${PROJECT_NAME}>/"
-        COMMENT "Copying Qt runtime DLLs..."
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${QT_PLUGIN_DIR}/platforms"
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/platforms"
+        COMMENT "Copying Qt runtime DLLs and platform plugin..."
     )
 endif()

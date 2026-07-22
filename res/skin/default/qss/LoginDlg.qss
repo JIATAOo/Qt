@@ -321,3 +321,202 @@ MeetingRoom QPushButton#leaveBtn:hover
 {
     background-color: #ff6b7a;
 }
+
+/* ==================== ChatPanel ==================== */
+
+#chatPanel
+{
+    background-color: #181A1F;
+    border-left: 1px solid #333;
+}
+
+#chatHeader
+{
+    background-color: #1e2130;
+    border-bottom: 1px solid #333;
+}
+
+#chatTitle
+{
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+#chatCloseBtn
+{
+    background-color: transparent;
+    color: #999999;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#chatCloseBtn:hover
+{
+    background-color: #ff4757;
+    color: #ffffff;
+}
+
+#chatMessageList
+{
+    background-color: #181A1F;
+    color: #dddddd;
+    border: none;
+    font-size: 13px;
+    font-family: "Microsoft YaHei";
+    padding: 8px;
+    outline: none;
+}
+
+#chatMessageList::item
+{
+    background-color: #252836;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin: 3px 0;
+    color: #dddddd;
+}
+
+#chatInputBar
+{
+    background-color: #1e2130;
+    border-top: 1px solid #333;
+}
+
+#chatInput
+{
+    background-color: #252836;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: "Microsoft YaHei";
+    padding: 4px 8px;
+    height: 28px;
+}
+
+#chatInput:focus
+{
+    border: 1px solid #1ba1e2;
+}
+
+#chatSendBtn
+{
+    background-color: #BBC8E5;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+}
+
+#chatSendBtn:hover
+{
+    background-color: #1ba1e2;
+}
+
+/* ==================== ParticipantsPanel ==================== */
+
+#participantsPanel
+{
+    background-color: #181A1F;
+    border-left: 1px solid #333;
+}
+
+#participantsHeader
+{
+    background-color: #1e2130;
+    border-bottom: 1px solid #333;
+}
+
+#participantsTitle
+{
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+
+#participantsCloseBtn
+{
+    background-color: transparent;
+    color: #999999;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#participantsCloseBtn:hover
+{
+    background-color: #ff4757;
+    color: #ffffff;
+}
+
+#participantList
+{
+    background-color: #181A1F;
+    color: #dddddd;
+    border: none;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 4px;
+    outline: none;
+}
+
+#participantList::item
+{
+    background-color: #252836;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 2px 4px;
+    color: #dddddd;
+}
+
+/* 参与者标签 hover 效果 */
+
+MeetingRoom QLabel#participantsLabel:hover
+{
+    color: #1ba1e2;
+}
+
+/* 设备选择器 */
+
+MeetingRoom QComboBox#cameraCombo,
+MeetingRoom QComboBox#micCombo
+{
+    background-color: #252836;
+    color: #cccccc;
+    border: 1px solid #444;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei";
+    height: 24px;
+}
+
+MeetingRoom QComboBox#cameraCombo:hover,
+MeetingRoom QComboBox#micCombo:hover
+{
+    border: 1px solid #1ba1e2;
+}
+
+MeetingRoom QComboBox#cameraCombo::drop-down,
+MeetingRoom QComboBox#micCombo::drop-down
+{
+    border: none;
+    width: 18px;
+}
+
+MeetingRoom QComboBox#cameraCombo QAbstractItemView,
+MeetingRoom QComboBox#micCombo QAbstractItemView
+{
+    background-color: #181A1F;
+    color: #cccccc;
+    border: 1px solid #444;
+    selection-background-color: #1ba1e2;
+    font-size: 12px;
+}
